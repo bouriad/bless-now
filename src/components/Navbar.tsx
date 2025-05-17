@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
+import { HandHeart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center">
-              <span className="text-white font-semibold text-xl">✝️</span>
+            <div className="w-8 h-8 rounded-full bg-faith-green-500 flex items-center justify-center">
+              <HandHeart size={20} className="text-white" />
             </div>
             <span className="text-xl font-montserrat font-bold text-sky-900">BlessNow</span>
           </Link>
