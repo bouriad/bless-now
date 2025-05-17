@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-navy-500 text-gray-300">
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-faith-green-500 flex items-center justify-center">
                 <span className="text-white font-semibold text-xl">✝️</span>
               </div>
-              <span className="text-xl font-montserrat font-bold text-white">ChurchGive</span>
+              <span className="text-xl font-montserrat font-bold text-white">BlessNow</span>
             </div>
             <p className="text-sm mb-4">
-              Connecting donors with faith-based projects around the world. Together, we can build, grow, and sustain Christ-centered missions.
+              Empowering local churches through direct giving. Together, we can build, strengthen, and sustain Christ-centered communities.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-sky-400">
@@ -40,17 +40,17 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-montserrat font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="hover:text-sky-400 transition-colors">Home</Link></li>
-              <li><Link to="/projects" className="hover:text-sky-400 transition-colors">Browse Projects</Link></li>
+              <li><Link to="/projects" className="hover:text-sky-400 transition-colors">Church Projects</Link></li>
               <li><Link to="/completed" className="hover:text-sky-400 transition-colors">Completed Projects</Link></li>
               <li><Link to="/map" className="hover:text-sky-400 transition-colors">Church Map</Link></li>
-              <li><Link to="/about" className="hover:text-sky-400 transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-sky-400 transition-colors">About Our Mission</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-white font-montserrat font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-sky-400 transition-colors">How It Works</a></li>
+              <li><a href="#" className="hover:text-sky-400 transition-colors">How We Empower Churches</a></li>
               <li><a href="#" className="hover:text-sky-400 transition-colors">Church Registration</a></li>
               <li><a href="#" className="hover:text-sky-400 transition-colors">Donation FAQ</a></li>
               <li><a href="#" className="hover:text-sky-400 transition-colors">Privacy Policy</a></li>
@@ -60,16 +60,16 @@ const Footer: React.FC = () => {
           
           <div>
             <h3 className="text-white font-montserrat font-semibold mb-4">Newsletter</h3>
-            <p className="text-sm mb-4">Subscribe to receive updates about new projects and success stories.</p>
+            <p className="text-sm mb-4">Subscribe to receive updates about local church projects and success stories.</p>
             <form className="flex flex-col space-y-2">
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="px-3 py-2 bg-navy-700 border border-navy-300 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-500"
               />
               <button 
                 type="submit" 
-                className="bg-sky-500 text-white font-medium py-2 px-4 rounded-md hover:bg-sky-600 transition-colors"
+                className="bg-gold-500 text-white font-medium py-2 px-4 rounded-md hover:bg-gold-600 transition-colors"
               >
                 Subscribe
               </button>
@@ -77,9 +77,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-6 border-t border-gray-800 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} ChurchGive. All rights reserved.</p>
-          <p className="mt-1">Made with ❤️ to support faith-based missions worldwide.</p>
+        <div className="mt-8 pt-6 border-t border-navy-700 text-sm text-center">
+          <p>&copy; {new Date().getFullYear()} BlessNow. All rights reserved.</p>
+          <p className="mt-1">Made with ❤️ to empower local churches worldwide.</p>
         </div>
       </div>
     </footer>

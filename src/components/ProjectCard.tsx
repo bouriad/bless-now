@@ -51,12 +51,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       
       <CardHeader className="p-4 pb-2">
-        <div className="text-xs text-gray-500 mb-1">{churchName}</div>
-        <h3 className="font-montserrat font-semibold text-lg line-clamp-1">{title}</h3>
+        <div className="text-xs text-navy-300 mb-1">{churchName}</div>
+        <h3 className="font-montserrat font-semibold text-lg line-clamp-1 text-navy-500">{title}</h3>
       </CardHeader>
       
       <CardContent className="p-4 pt-0 flex-grow">
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4">{summary}</p>
+        <p className="text-sm text-navy-300 line-clamp-2 mb-4">{summary}</p>
         
         <div className="progress-bar mb-2">
           <div 
@@ -65,15 +65,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ></div>
         </div>
         
-        <div className="flex justify-between text-xs text-gray-500">
+        <div className="flex justify-between text-xs text-navy-300">
           <span><span className="font-semibold text-faith-green-700">${currentAmount.toLocaleString()}</span> raised</span>
           <span className="font-medium">{daysLeft > 0 ? `${daysLeft} days left` : 'Ending soon'}</span>
         </div>
       </CardContent>
       
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full bg-sky-500 hover:bg-sky-600">
-          Donate Now
+        <Button className="w-full bg-gold-500 hover:bg-gold-700">
+          Support This Church
         </Button>
       </CardFooter>
     </Card>
