@@ -29,7 +29,7 @@ const AboutUs = () => {
       bio: "Specializes in database architecture and system integrations that keep our platform robust and scalable."
     },
     {
-      name: "Knuckle",
+      name: "Elias Nakhle",
       role: "Back-End Developer",
       bio: "Focuses on payment processing and security measures to ensure donor contributions reach their destinations."
     },
