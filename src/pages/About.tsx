@@ -24,7 +24,7 @@ const AboutUs = () => {
       bio: "Ensures the platform operates efficiently and securely behind the scenes, handling data and server operations."
     },
     {
-      name: "Philippe",
+      name: "Philippe Tawk",
       role: "Back-End Developer",
       bio: "Specializes in database architecture and system integrations that keep our platform robust and scalable."
     },
