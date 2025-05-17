@@ -13,6 +13,7 @@ import Churches from "./pages/Churches";
 import ChurchDetail from "./pages/ChurchDetail";
 import AboutUs from "./pages/About";
 import SearchResults from "./pages/SearchResults";
+import ProjectDetail from "./pages/ProjectDetail";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/completed" element={<CompletedProjects />} />
           <Route path="/map" element={<ChurchMapPage />} />
           <Route path="/about" element={<AboutUs />} />

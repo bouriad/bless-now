@@ -14,7 +14,6 @@ import { toast } from '@/hooks/use-toast';
 // Define the form schema with validation
 const formSchema = z.object({
   projectName: z.string().min(3, { message: "Project name must be at least 3 characters" }),
-  churchName: z.string().min(3, { message: "Church name must be at least 3 characters" }),
   amount: z.string().min(1, { message: "Amount is required" }),
   description: z.string().min(10, { message: "Description must be at least 10 characters" }),
   file: z.any().optional(),
@@ -35,7 +34,6 @@ const StartProjectModal = ({ open, onOpenChange }: StartProjectModalProps) => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       projectName: "",
-      churchName: "",
       amount: "",
       description: "",
     },
@@ -101,20 +99,6 @@ const StartProjectModal = ({ open, onOpenChange }: StartProjectModalProps) => {
                   <FormLabel>Project Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Enter project name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            
-            <FormField
-              control={form.control}
-              name="churchName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Church Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter church name" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
