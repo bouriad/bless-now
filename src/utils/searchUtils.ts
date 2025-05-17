@@ -29,6 +29,6 @@ export const searchProjects = (projects: Project[], searchTerm: string): Project
     matchesSearch(project.title, searchTerm) ||
     matchesSearch(project.location, searchTerm) ||
     matchesSearch(project.category, searchTerm) ||
-    matchesSearch(project.description, searchTerm)
+    matchesSearch(project.summary, searchTerm) // Changed from 'description' to 'summary'
   );
 };
