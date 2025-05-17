@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { World, HandHeart, Church, Globe } from 'lucide-react';
+import { Globe, HandHeart, Church, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
@@ -114,7 +113,7 @@ const AboutUs = () => {
 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                   <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4">
-                    <World className="text-gold h-6 w-6" />
+                    <Users className="text-gold h-6 w-6" />
                   </div>
                   <h3 className="font-playfair font-semibold text-xl mb-3">Kingdom Impact</h3>
                   <p className="text-gray-600 font-public">
