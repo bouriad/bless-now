@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HandHeart } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 rounded-full bg-sky flex items-center justify-center">
-                <span className="text-white font-semibold text-xl">✝️</span>
+                <HandHeart size={20} className="text-white" />
               </div>
               <span className="text-xl font-playfair font-bold text-white">BlessNow</span>
             </div>
