@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -34,7 +33,7 @@ const AboutUs = () => {
       bio: "Focuses on payment processing and security measures to ensure donor contributions reach their destinations."
     },
     {
-      name: "John John",
+      name: "John Mamdouh",
       role: "Digital Marketing Strategist and IT Manager",
       bio: "Oversees digital campaigns and technical infrastructure to maximize BlessNow's reach and impact."
     }
