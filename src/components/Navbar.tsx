@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
             <div className="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center">
               <span className="text-white font-semibold text-xl">✝️</span>
             </div>
-            <span className="text-xl font-montserrat font-bold text-sky-900">ChurchGive</span>
+            <span className="text-xl font-montserrat font-bold text-sky-900">BlessNow</span>
           </Link>
         </div>
 
