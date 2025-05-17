@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-playfair font-bold text-white">BlessNow</span>
             </div>
             <p className="text-sm mb-4 font-public">
-              Empowering local churches through direct giving. Together, we can build, strengthen, and sustain Christ-centered communities.
+              Empowering local churches across the MENA region through direct giving. Together, we can build, strengthen, and sustain Christ-centered communities.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white/80 hover:text-sky">
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               <li><Link to="/" className="hover:text-sky transition-colors">Home</Link></li>
               <li><Link to="/projects" className="hover:text-sky transition-colors">Church Projects</Link></li>
               <li><Link to="/completed" className="hover:text-sky transition-colors">Completed Projects</Link></li>
-              <li><Link to="/map" className="hover:text-sky transition-colors">Church Map</Link></li>
+              <li><Link to="/map" className="hover:text-sky transition-colors">MENA Church Map</Link></li>
               <li><Link to="/about" className="hover:text-sky transition-colors">About Our Mission</Link></li>
             </ul>
           </div>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           
           <div>
             <h3 className="text-white font-playfair font-semibold mb-4">Newsletter</h3>
-            <p className="text-sm mb-4 font-public">Subscribe to receive updates about local church projects and success stories.</p>
+            <p className="text-sm mb-4 font-public">Subscribe to receive updates about local church projects and success stories from the MENA region.</p>
             <form className="flex flex-col space-y-2">
               <input 
                 type="email" 
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 pt-6 border-t border-white/20 text-sm text-center font-public">
           <p>&copy; {new Date().getFullYear()} BlessNow. All rights reserved.</p>
-          <p className="mt-1">Made with ❤️ to empower local churches worldwide.</p>
+          <p className="mt-1">Made with ❤️ to empower local churches across the MENA region.</p>
         </div>
       </div>
     </footer>
