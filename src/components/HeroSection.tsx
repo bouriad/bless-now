@@ -1,10 +1,20 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <section className="relative bg-gradient-to-b from-sky/10 to-white py-16 md:py-24">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1565377004082-03c4678547ba')] bg-cover bg-center opacity-10"></div>
@@ -28,16 +38,23 @@ const HeroSection: React.FC = () => {
         </div>
         
         <div className="max-w-xl mx-auto relative">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search for churches in Egypt, Lebanon, Jordan..."
-              className="w-full h-12 pl-4 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky focus:border-transparent font-public"
-            />
-            <Link to="/churches" className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full hover:bg-gold/90 transition-colors">
-              <Search size={18} />
-            </Link>
-          </div>
+          <form onSubmit={handleSearch}>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for churches in Egypt, Lebanon, Jordan..."
+                className="w-full h-12 pl-4 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky focus:border-transparent font-public"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button 
+                type="submit" 
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full hover:bg-gold/90 transition-colors"
+              >
+                <Search size={18} />
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

@@ -1,17 +1,26 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { MapPin, Filter } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { MapPin, Filter, Search } from 'lucide-react';
 import { getMENAChurches } from '@/data/mockChurches';
+import { searchChurches } from '@/utils/searchUtils';
+import { Input } from '@/components/ui/input';
 
 const Churches = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const queryParams = new URLSearchParams(location.search);
+  const initialQuery = queryParams.get('q') || '';
+
   const [churches] = useState(getMENAChurches());
   const [countryFilter, setCountryFilter] = useState('all');
   const [cityFilter, setCityFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
+  const [filteredChurches, setFilteredChurches] = useState(churches);
   
   // Get unique countries and cities for filters
   const countries = [...new Set(churches.map(church => church.country))];
@@ -19,11 +28,39 @@ const Churches = () => {
     ? [...new Set(churches.map(church => church.city))]
     : [...new Set(churches.filter(church => church.country === countryFilter).map(church => church.city))];
   
-  // Apply filters
-  const filteredChurches = churches.filter(church => {
-    return (countryFilter === 'all' || church.country === countryFilter) &&
-           (cityFilter === 'all' || church.city === cityFilter);
-  });
+  // Apply filters and search
+  useEffect(() => {
+    let result = churches;
+    
+    // Apply search if there is a query
+    if (searchQuery) {
+      result = searchChurches(result, searchQuery);
+    }
+    
+    // Apply filters
+    if (countryFilter !== 'all') {
+      result = result.filter(church => church.country === countryFilter);
+    }
+    
+    if (cityFilter !== 'all') {
+      result = result.filter(church => church.city === cityFilter);
+    }
+    
+    setFilteredChurches(result);
+  }, [searchQuery, countryFilter, cityFilter, churches]);
+  
+  // Handle initial search from URL params
+  useEffect(() => {
+    if (initialQuery) {
+      setSearchQuery(initialQuery);
+      // The filtering will be applied by the other useEffect
+    }
+  }, [initialQuery]);
+  
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate(`/churches?q=${encodeURIComponent(searchQuery.trim())}`);
+  };
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -38,6 +75,21 @@ const Churches = () => {
             <p className="text-navy/80 font-public">
               Connect with our partner churches across the Middle East and North Africa region.
             </p>
+          </div>
+          
+          {/* Search bar */}
+          <div className="max-w-xl mx-auto mb-8 relative">
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <Input 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search by church name, location, or denomination..." 
+                className="flex-grow"
+              />
+              <Button className="bg-sky hover:bg-sky/90" type="submit">
+                <Search size={18} />
+              </Button>
+            </form>
           </div>
           
           {/* Filters */}
@@ -90,6 +142,9 @@ const Churches = () => {
                     src={church.image} 
                     alt={church.name} 
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1492321936769-b49830bc1d1e";
+                    }}
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-grow">

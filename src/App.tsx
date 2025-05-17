@@ -12,6 +12,7 @@ import ChurchMapPage from "./pages/ChurchMapPage";
 import Churches from "./pages/Churches"; 
 import ChurchDetail from "./pages/ChurchDetail";
 import AboutUs from "./pages/About";
+import SearchResults from "./pages/SearchResults";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/churches" element={<Churches />} />
           <Route path="/churches/:id" element={<ChurchDetail />} />
+          <Route path="/search" element={<SearchResults />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
