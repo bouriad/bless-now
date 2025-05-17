@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,7 +14,7 @@ const AboutUs = () => {
       bio: "Combines spiritual drive with marketing expertise to guide BlessNow's vision and outreach strategies."
     },
     {
-      name: "Yessine Hayar",
+      name: "Elias Hayar",
       role: "Full-Stack Web Developer",
       bio: "Creates seamless user experiences and builds the technical foundation that powers our platform."
     },
