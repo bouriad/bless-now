@@ -3,32 +3,40 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { World, HandHeart, Church, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      role: "Executive Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-      bio: "Sarah has 15 years of experience in non-profit leadership and is passionate about connecting resources to ministry needs."
+      name: "Andrew Saba",
+      role: "Digital Marketing Expert and Vision Lead",
+      bio: "Combines spiritual drive with marketing expertise to guide BlessNow's vision and outreach strategies."
     },
     {
-      name: "David Chen",
-      role: "Partnerships Director",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-      bio: "David works directly with churches around the world to understand their needs and develop funding strategies."
+      name: "Yessine Hayar",
+      role: "Full-Stack Web Developer",
+      bio: "Creates seamless user experiences and builds the technical foundation that powers our platform."
     },
     {
-      name: "Rebecca Osei",
-      role: "Operations Manager",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-      bio: "Rebecca ensures that the platform runs smoothly and every dollar reaches its intended destination efficiently."
+      name: "Michael Tawk",
+      role: "Back-End Developer",
+      bio: "Ensures the platform operates efficiently and securely behind the scenes, handling data and server operations."
     },
     {
-      name: "James Wilson",
-      role: "Technology Director",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-      bio: "James leads our technical team with a focus on creating a seamless experience for donors and churches alike."
+      name: "Philippe",
+      role: "Back-End Developer",
+      bio: "Specializes in database architecture and system integrations that keep our platform robust and scalable."
+    },
+    {
+      name: "Knuckle",
+      role: "Back-End Developer",
+      bio: "Focuses on payment processing and security measures to ensure donor contributions reach their destinations."
+    },
+    {
+      name: "John John",
+      role: "Digital Marketing Strategist and IT Manager",
+      bio: "Oversees digital campaigns and technical infrastructure to maximize BlessNow's reach and impact."
     }
   ];
 
@@ -37,118 +45,100 @@ const AboutUs = () => {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492321936769-b49830bc1d1e')] bg-cover bg-center opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+        {/* Hero Section with Mission Statement */}
+        <section className="relative py-20 md:py-28 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464638681273-0962e9b53566')] bg-cover bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-bold mb-6 text-gray-900">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 text-navy">
                 Our Mission
               </h1>
-              <p className="text-xl text-gray-800 leading-relaxed mb-8 font-light">
-                To glorify God by connecting generous donors with impactful church projects worldwide, building His kingdom one need at a time.
+              <p className="text-xl md:text-2xl text-gray-800 leading-relaxed mb-8 font-public">
+                To bridge the gap between generous donors and underfunded church-led projects across the MENA region.
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-public">
+                We aim to make giving radically transparent, simple, and impactful — connecting the global Body of Christ through trust and generosity.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Who We Are Section */}
+        {/* What We Do Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-montserrat font-bold text-3xl text-gray-900 mb-6">
-                  Who We Are
-                </h2>
-                <p className="text-gray-700 mb-4">
-                  ChurchGive was founded in 2018 by a group of believers passionate about supporting the Church's mission worldwide. What began as a small effort to help local congregations quickly grew into a global platform connecting donors with churches in need.
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-playfair font-bold text-3xl text-navy mb-8 text-center">
+                What We Do
+              </h2>
+              <div className="text-gray-700 space-y-6 font-public text-lg">
+                <p>
+                  We empower churches in the Middle East and North Africa to share their needs and receive funding through a digital-first platform. Our system verifies each project, ensuring accountability while maintaining dignity and respect for local church leadership.
                 </p>
-                <p className="text-gray-700 mb-4">
-                  We believe that the local church is God's primary instrument for bringing hope, healing, and transformation to communities. By empowering churches with resources, we help them become beacons of light in their neighborhoods and beyond.
-                </p>
-                <p className="text-gray-700">
-                  Our team consists of committed Christians with backgrounds in ministry, non-profit management, and technology, all united by the desire to see God's kingdom advance through the work of local churches worldwide.
+                <p>
+                  Donors can browse real projects, give confidently, and follow the journey with real-time updates. It's a movement of generosity rooted in the spirit of the early Church — resource-sharing, care, and unity across borders and denominations.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-lg overflow-hidden h-48 md:h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" 
-                    alt="Church volunteers working" 
-                    className="w-full h-full object-cover"
-                  />
+              
+              {/* Core Values */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mb-4">
+                    <Globe className="text-sky h-6 w-6" />
+                  </div>
+                  <h3 className="font-playfair font-semibold text-xl mb-3">Global Vision</h3>
+                  <p className="text-gray-600 font-public">
+                    Connecting believers worldwide to support the Church where resources are needed most.
+                  </p>
                 </div>
-                <div className="rounded-lg overflow-hidden h-48 md:h-64 mt-8">
-                  <img 
-                    src="https://images.unsplash.com/photo-1518005020951-eccb494ad742" 
-                    alt="Church building" 
-                    className="w-full h-full object-cover"
-                  />
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4">
+                    <HandHeart className="text-gold h-6 w-6" />
+                  </div>
+                  <h3 className="font-playfair font-semibold text-xl mb-3">Transparency</h3>
+                  <p className="text-gray-600 font-public">
+                    We provide full visibility on project progress, fund usage, and impact stories.
+                  </p>
                 </div>
-                <div className="rounded-lg overflow-hidden h-48 md:h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1466442929976-97f336a657be" 
-                    alt="Community gathering" 
-                    className="w-full h-full object-cover"
-                  />
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mb-4">
+                    <Church className="text-sky h-6 w-6" />
+                  </div>
+                  <h3 className="font-playfair font-semibold text-xl mb-3">Local Empowerment</h3>
+                  <p className="text-gray-600 font-public">
+                    We trust local church leadership to identify needs and implement solutions effectively.
+                  </p>
                 </div>
-                <div className="rounded-lg overflow-hidden h-48 md:h-64 mt-8">
-                  <img 
-                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
-                    alt="Remote church" 
-                    className="w-full h-full object-cover"
-                  />
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4">
+                    <World className="text-gold h-6 w-6" />
+                  </div>
+                  <h3 className="font-playfair font-semibold text-xl mb-3">Kingdom Impact</h3>
+                  <p className="text-gray-600 font-public">
+                    Every project advances God's kingdom through practical witness and ministry.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Our Values Section */}
+        
+        {/* Why BlessNow Exists */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-900 mb-10 text-center">
-              Our Core Values
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-sky-600 text-xl">✝️</span>
-                </div>
-                <h3 className="font-montserrat font-semibold text-xl mb-3">Faith-Centered</h3>
-                <p className="text-gray-600">
-                  We operate with Christ at the center, guided by prayer and Biblical principles in all we do.
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-playfair font-bold text-3xl text-navy mb-6 text-center">
+                Why BlessNow Exists
+              </h2>
+              <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                <p className="text-gray-700 font-public mb-4">
+                  There's a disconnect in global giving. Many donors want to support meaningful work in regions like the Middle East and North Africa, but struggle to find trustworthy channels that directly reach local churches leading impactful projects.
                 </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-faith-green-100 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-faith-green-600 text-xl">👐</span>
-                </div>
-                <h3 className="font-montserrat font-semibold text-xl mb-3">Transparency</h3>
-                <p className="text-gray-600">
-                  We maintain complete openness about how funds are used and the impact they create.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-gold-100 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-gold-600 text-xl">🤲</span>
-                </div>
-                <h3 className="font-montserrat font-semibold text-xl mb-3">Stewardship</h3>
-                <p className="text-gray-600">
-                  We carefully steward every resource entrusted to us, ensuring maximum impact for the Kingdom.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-sky-600 text-xl">🌐</span>
-                </div>
-                <h3 className="font-montserrat font-semibold text-xl mb-3">Global Vision</h3>
-                <p className="text-gray-600">
-                  We serve the worldwide Church, recognizing God's work in every culture and nation.
+                <p className="text-gray-700 font-public">
+                  BlessNow bridges this gap by verifying church-led initiatives, providing a secure giving platform, and maintaining transparent communication between donors and recipients. We're not just a funding platform — we're building a community of generosity that transcends borders.
                 </p>
               </div>
             </div>
@@ -158,104 +148,51 @@ const AboutUs = () => {
         {/* Team Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-900 mb-10 text-center">
+            <h2 className="font-playfair font-bold text-3xl text-navy mb-10 text-center">
               Meet Our Team
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {teamMembers.map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="font-montserrat font-semibold text-xl mb-1">{member.name}</h3>
-                  <p className="text-sky-600 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <h3 className="font-playfair font-semibold text-xl mb-1">{member.name}</h3>
+                  <p className="text-sky font-medium mb-3 font-public">{member.role}</p>
+                  <p className="text-gray-600 text-sm font-public">{member.bio}</p>
                 </div>
               ))}
+            </div>
+            <div className="text-center mt-10">
+              <p className="text-gray-700 font-public italic max-w-3xl mx-auto">
+                This team combines spiritual drive, technical expertise, and marketing experience to deliver a meaningful and scalable platform for the Church.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="py-16 bg-sky-50">
+        {/* How We Operate */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-900 mb-10 text-center">
-              Words from Our Partners
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="text-gold-500 mb-4">
-                  {"★".repeat(5)}
-                </div>
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 italic">
-                    "ChurchGive has been an answer to prayer for our rural congregation. The funds we raised helped us start a community outreach program that's transforming lives."
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="font-playfair font-bold text-3xl text-navy mb-6">
+                How We Operate
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="font-playfair font-semibold text-lg mb-3">Verification</h3>
+                  <p className="text-gray-600 font-public text-sm">
+                    We carefully verify each church and project to ensure legitimacy and stewardship.
                   </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                      alt="Pastor Thomas"
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Pastor Thomas</p>
-                    <p className="text-gray-500 text-sm">Riverside Fellowship</p>
-                  </div>
                 </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="text-gold-500 mb-4">
-                  {"★".repeat(5)}
-                </div>
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 italic">
-                    "The transparency and ease of use make ChurchGive stand out. Our donors appreciate seeing exactly how their gifts are being used to advance God's kingdom."
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="font-playfair font-semibold text-lg mb-3">Distribution</h3>
+                  <p className="text-gray-600 font-public text-sm">
+                    We use secure channels to transfer funds directly to church projects with minimal overhead.
                   </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80" 
-                      alt="Maria Rodriguez"
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Maria Rodriguez</p>
-                    <p className="text-gray-500 text-sm">Hope Community Church</p>
-                  </div>
                 </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="text-gold-500 mb-4">
-                  {"★".repeat(5)}
-                </div>
-                <blockquote className="mb-4">
-                  <p className="text-gray-700 italic">
-                    "As a small missionary church in Kenya, we never thought we'd raise enough for a clean water project. ChurchGive connected us with believers worldwide who shared our vision."
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h3 className="font-playfair font-semibold text-lg mb-3">Reporting</h3>
+                  <p className="text-gray-600 font-public text-sm">
+                    We provide regular updates on project progress and impact to maintain transparency.
                   </p>
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
-                    <img 
-                      src="https://images.unsplash.com/photo-1507152832244-10d45c7eda57" 
-                      alt="Pastor Emmanuel"
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                  <div>
-                    <p className="font-medium">Pastor Emmanuel</p>
-                    <p className="text-gray-500 text-sm">Life Springs Church, Kenya</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -263,21 +200,21 @@ const AboutUs = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-faith-green-600 text-white">
+        <section className="py-16 bg-sky text-white">
           <div className="container mx-auto px-4 text-center">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="font-montserrat font-bold text-3xl mb-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-playfair font-bold text-3xl mb-4">
                 Join Our Mission
               </h2>
-              <p className="text-lg mb-8 opacity-90">
-                Whether you're looking to support church projects or need funding for your own, we invite you to be part of what God is doing through ChurchGive.
+              <p className="text-lg mb-8 opacity-90 font-public">
+                Whether you're a church with a vision, a donor seeking impact, or a potential partner - we invite you to be part of this movement of generosity and transformation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-faith-green-600 hover:bg-gray-100 px-8 py-2 h-auto text-base">
-                  Donate Now
+                <Button asChild className="bg-white text-sky hover:bg-gray-100 px-8 py-2 h-auto text-base">
+                  <Link to="/churches/register">Become a Partner Church</Link>
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-faith-green-700 px-8 py-2 h-auto text-base">
-                  Register Your Church
+                <Button asChild variant="outline" className="border-white text-white hover:bg-sky-700 px-8 py-2 h-auto text-base">
+                  <Link to="/projects">Support a Mission</Link>
                 </Button>
               </div>
             </div>
