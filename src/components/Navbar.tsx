@@ -3,9 +3,16 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { HandHeart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import StartProjectModal from '@/components/StartProjectModal';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleStartProjectClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-navy text-white shadow-sm">
@@ -39,8 +46,8 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Our Mission
           </Link>
-          <Button className="bg-gold hover:bg-gold/90 text-white ml-4 font-public" size="sm" asChild>
-            <Link to="/about">Start a Church Project</Link>
+          <Button className="bg-gold hover:bg-gold/90 text-white ml-4 font-public" size="sm" onClick={handleStartProjectClick}>
+            Start a Church Project
           </Button>
         </nav>
 
@@ -123,12 +130,22 @@ const Navbar: React.FC = () => {
             >
               Our Mission
             </Link>
-            <Button className="bg-gold hover:bg-gold/90 text-white w-full font-public" size="sm" asChild>
-              <Link to="/about" onClick={() => setIsMenuOpen(false)}>Start a Church Project</Link>
+            <Button 
+              className="bg-gold hover:bg-gold/90 text-white w-full font-public" 
+              size="sm" 
+              onClick={(e) => {
+                handleStartProjectClick(e);
+                setIsMenuOpen(false);
+              }}
+            >
+              Start a Church Project
             </Button>
           </div>
         </div>
       )}
+
+      {/* Project Modal */}
+      <StartProjectModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </header>
   );
 };
