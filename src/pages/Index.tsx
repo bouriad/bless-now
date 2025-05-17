@@ -8,6 +8,7 @@ import ChurchMap from '@/components/ChurchMap';
 import Footer from '@/components/Footer';
 import { getActiveProjects } from '@/data/mockProjects';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const featuredProjects = getActiveProjects().slice(0, 6);
@@ -40,8 +41,8 @@ const Index = () => {
             </div>
 
             <div className="mt-12 text-center">
-              <Button className="bg-gold hover:bg-gold/90 px-6">
-                View All MENA Church Projects
+              <Button className="bg-gold hover:bg-gold/90 px-6" asChild>
+                <Link to="/projects">View All MENA Church Projects</Link>
               </Button>
             </div>
           </div>
@@ -113,8 +114,8 @@ const Index = () => {
             <ChurchMap />
 
             <div className="mt-8 text-center">
-              <Button variant="outline" className="border-sky text-sky hover:bg-sky/10">
-                Explore Full MENA Map
+              <Button variant="outline" className="border-sky text-sky hover:bg-sky/10" asChild>
+                <Link to="/map">Explore Full MENA Map</Link>
               </Button>
             </div>
           </div>
@@ -131,11 +132,11 @@ const Index = () => {
                 Join thousands of donors supporting local churches across the MENA region. Start giving today or register your church to receive funding.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-gold hover:bg-gold/90 px-8 py-2 h-auto text-base">
-                  Find a MENA Church to Support
+                <Button className="bg-gold hover:bg-gold/90 px-8 py-2 h-auto text-base" asChild>
+                  <Link to="/projects">Find a MENA Church to Support</Link>
                 </Button>
-                <Button variant="outline" className="border-sky text-sky hover:bg-sky/10 px-8 py-2 h-auto text-base">
-                  Register Your Church
+                <Button variant="outline" className="border-sky text-sky hover:bg-sky/10 px-8 py-2 h-auto text-base" asChild>
+                  <Link to="/about">Register Your Church</Link>
                 </Button>
               </div>
             </div>

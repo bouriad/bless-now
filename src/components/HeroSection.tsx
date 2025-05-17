@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {
   return (
@@ -17,11 +18,11 @@ const HeroSection: React.FC = () => {
             Your donation helps build, strengthen, and sustain Christ-centered congregations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gold hover:bg-gold/90 text-white font-medium px-6 py-2 h-auto">
-              Browse MENA Churches
+            <Button className="bg-gold hover:bg-gold/90 text-white font-medium px-6 py-2 h-auto" asChild>
+              <Link to="/projects">Browse MENA Churches</Link>
             </Button>
-            <Button variant="outline" className="border-sky text-sky hover:bg-sky/10 font-medium px-6 py-2 h-auto">
-              Start a Church Project
+            <Button variant="outline" className="border-sky text-sky hover:bg-sky/10 font-medium px-6 py-2 h-auto" asChild>
+              <Link to="/about">Start a Church Project</Link>
             </Button>
           </div>
         </div>
@@ -33,9 +34,9 @@ const HeroSection: React.FC = () => {
               placeholder="Search for churches in Egypt, Lebanon, Jordan..."
               className="w-full h-12 pl-4 pr-12 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-sky focus:border-transparent font-public"
             />
-            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full hover:bg-gold/90 transition-colors">
+            <Link to="/projects" className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gold text-white p-2 rounded-full hover:bg-gold/90 transition-colors">
               <Search size={18} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
