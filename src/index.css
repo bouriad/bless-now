@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Public+Sans:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,13 +8,13 @@
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 215 25% 27%;
+    --foreground: 220 16% 22%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 220 16% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 220 16% 22%;
 
     --primary: 210 73% 59%;
     --primary-foreground: 0 0% 100%;
@@ -23,9 +23,9 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 220 16% 46%;
 
-    --accent: 92 17% 62%;
+    --accent: 220 16% 22%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -33,40 +33,40 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 215 25% 27%;
+    --ring: 220 16% 22%;
 
     --radius: 0.5rem;
     
-    --sidebar-background: 215 25% 27%;
+    --sidebar-background: 220 16% 22%;
     --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 210 73% 59%; 
-    --sidebar-primary-foreground: 215 25% 27%;
-    --sidebar-accent: 92 17% 62%;
+    --sidebar-primary-foreground: 220 16% 22%;
+    --sidebar-accent: 220 16% 22%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 217 33% 18%;
     --sidebar-ring: 213 27% 84%;
   }
 
   .dark {
-    --background: 215 25% 27%;
+    --background: 220 16% 22%;
     --foreground: 0 0% 98%;
 
-    --card: 215 25% 27%;
+    --card: 220 16% 22%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 27%;
+    --popover: 220 16% 22%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 210 73% 59%;
-    --primary-foreground: 215 25% 27%;
+    --primary-foreground: 220 16% 22%;
 
     --secondary: 39 91% 55%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary-foreground: 220 16% 22%;
 
     --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 220 20% 65%;
 
-    --accent: 92 17% 62%;
+    --accent: 210 73% 59%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
@@ -84,11 +84,11 @@
   }
 
   body {
-    @apply bg-ivory-500 text-foreground font-roboto;
+    @apply bg-ivory text-foreground font-public;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-montserrat font-semibold text-navy-500;
+    @apply font-playfair font-semibold text-navy;
   }
 
   /* Custom utility classes for the donation platform */
@@ -109,6 +109,6 @@
   }
 
   .map-pin {
-    @apply w-6 h-6 rounded-full flex items-center justify-center bg-faith-green-500 text-white transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform cursor-pointer;
+    @apply w-6 h-6 rounded-full flex items-center justify-center bg-sky text-white transform -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform cursor-pointer;
   }
 }

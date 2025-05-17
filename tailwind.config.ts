@@ -63,42 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom theme colors with exact hex values
-				"sky": {
-					"300": "#6BB9F0", // Light Blue for link hovers/progress
-					"500": "#4A90E2", // Primary brand color - Sky Blue
-					"700": "#3A80D2",
-					"900": "#2A70C2",
-				},
-				"gold": {
-					"300": "#F7B84B",
-					"500": "#F5A623", // CTA buttons and highlights - Goldenrod
-					"700": "#E09600",
-					"900": "#D08600",
-				},
-				"navy": {
-					"300": "#3D5166",
-					"500": "#2C3E50", // Headers and footers - Deep Navy
-					"700": "#1C2E40",
-					"900": "#0C1E30",
-				},
-				"faith-green": {
-					"300": "#B3C1A0",
-					"500": "#A3B18A", // Accents/icons - Olive Green
-					"700": "#93A17A",
-					"900": "#83916A",
-				},
-				"ivory": {
-					"100": "#FFFFFF",
-					"300": "#FBFBFB",
-					"500": "#F9F9F9", // Backgrounds - Ivory White
-					"700": "#F0F0F0",
-					"900": "#E0E0E0",
-				}
+				// Simplified color palette - only 3 main colors
+				"sky": "#4A90E2", // Primary brand color - Sky Blue
+				"gold": "#F5A623", // CTA buttons and highlights - Goldenrod
+				"navy": "#2C3E50", // Deep Navy for text and accents
+				"ivory": "#F9F9F9", // Background color
 			},
 			fontFamily: {
-				'montserrat': ['Montserrat', 'sans-serif'],
-				'roboto': ['Roboto', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
+				'public': ['Public Sans', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

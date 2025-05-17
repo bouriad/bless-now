@@ -8,35 +8,35 @@ const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-navy-500 text-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-navy text-white shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full bg-faith-green-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full bg-sky flex items-center justify-center">
               <HandHeart size={20} className="text-white" />
             </div>
-            <span className="text-xl font-montserrat font-bold text-white">BlessNow</span>
+            <span className="text-xl font-playfair font-bold text-white">BlessNow</span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="font-medium text-white hover:text-sky-300 transition-colors">
+          <Link to="/" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Home
           </Link>
-          <Link to="/projects" className="font-medium text-white hover:text-sky-300 transition-colors">
+          <Link to="/projects" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Church Projects
           </Link>
-          <Link to="/completed" className="font-medium text-white hover:text-sky-300 transition-colors">
+          <Link to="/completed" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Completed
           </Link>
-          <Link to="/map" className="font-medium text-white hover:text-sky-300 transition-colors">
+          <Link to="/map" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Church Map
           </Link>
-          <Link to="/about" className="font-medium text-white hover:text-sky-300 transition-colors">
+          <Link to="/about" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Our Mission
           </Link>
-          <Button className="bg-gold-500 hover:bg-gold-700 text-white ml-4" size="sm">
+          <Button className="bg-gold hover:bg-gold/90 text-white ml-4 font-public" size="sm">
             Start a Church Project
           </Button>
         </nav>
@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-md text-white hover:bg-navy-300 focus:outline-none"
+            className="p-2 rounded-md text-white hover:bg-navy/80 focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -76,44 +76,44 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-navy-500 shadow-md animate-fade-in">
+        <div className="md:hidden bg-navy shadow-md animate-fade-in">
           <div className="container mx-auto px-4 py-3 space-y-3">
             <Link 
               to="/" 
-              className="block font-medium text-white hover:text-sky-300 transition-colors py-2"
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/projects" 
-              className="block font-medium text-white hover:text-sky-300 transition-colors py-2"
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Church Projects
             </Link>
             <Link 
               to="/completed" 
-              className="block font-medium text-white hover:text-sky-300 transition-colors py-2"
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Completed
             </Link>
             <Link 
               to="/map" 
-              className="block font-medium text-white hover:text-sky-300 transition-colors py-2"
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Church Map
             </Link>
             <Link 
               to="/about" 
-              className="block font-medium text-white hover:text-sky-300 transition-colors py-2"
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Our Mission
             </Link>
-            <Button className="bg-gold-500 hover:bg-gold-700 text-white w-full" size="sm">
+            <Button className="bg-gold hover:bg-gold/90 text-white w-full font-public" size="sm">
               Start a Church Project
             </Button>
           </div>
