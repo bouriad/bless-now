@@ -3,10 +3,12 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export interface ProjectCardProps {
   id: string;
   churchName: string;
+  churchId: string;
   title: string;
   summary: string;
   image: string;
@@ -20,6 +22,7 @@ export interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
   churchName,
+  churchId,
   title,
   summary,
   image,
@@ -51,7 +54,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       
       <CardHeader className="p-4 pb-2">
-        <div className="text-xs text-navy/70 mb-1 font-public">{churchName}</div>
+        <div className="text-xs text-navy/70 mb-1 font-public">
+          <Link to={`/churches/${churchId}`} className="hover:text-sky transition-colors">
+            {churchName}
+          </Link>
+        </div>
         <h3 className="font-playfair font-semibold text-lg line-clamp-1 text-navy">{title}</h3>
       </CardHeader>
       

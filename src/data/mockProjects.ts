@@ -2,6 +2,7 @@
 export interface Project {
   id: string;
   churchName: string;
+  churchId: string; // Added churchId reference
   title: string;
   summary: string;
   image: string;
@@ -17,6 +18,7 @@ export const mockProjects: Project[] = [
   {
     id: "1",
     churchName: "Resurrection Church Beirut",
+    churchId: "church1",
     title: "Community Center Expansion",
     summary: "Help us expand our community center to accommodate more families and provide essential services to refugees in our neighborhood.",
     image: "https://images.unsplash.com/photo-1473177104440-ffee2f376098",
@@ -30,6 +32,7 @@ export const mockProjects: Project[] = [
   {
     id: "2",
     churchName: "Kasr El Dobara Church",
+    churchId: "church2",
     title: "Food Distribution Program",
     summary: "We're expanding our food distribution program to serve more vulnerable families in Cairo's urban communities.",
     image: "https://images.unsplash.com/photo-1493770348161-369560ae357d",
@@ -43,6 +46,7 @@ export const mockProjects: Project[] = [
   {
     id: "3",
     churchName: "Amman Baptist Church",
+    churchId: "church3",
     title: "Youth Ministry Transportation",
     summary: "Help us purchase a van to transport youth to events, community service projects, and outreach in surrounding villages.",
     image: "https://images.unsplash.com/photo-1473879112146-98af332b2558",
@@ -56,6 +60,7 @@ export const mockProjects: Project[] = [
   {
     id: "4",
     churchName: "St. Andrew's Church",
+    churchId: "church9",
     title: "Water Project in Rural Morocco",
     summary: "Partner with us to provide clean water access to a village of 500 people in the Atlas Mountains region.",
     image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
@@ -69,6 +74,7 @@ export const mockProjects: Project[] = [
   {
     id: "5",
     churchName: "St. Mary's Coptic Church",
+    churchId: "church5",
     title: "Historic Building Restoration",
     summary: "Help restore our 150-year-old church building that serves as a spiritual and cultural landmark for the community.",
     image: "https://images.unsplash.com/photo-1519892743950-a52cd8954abc",
@@ -82,6 +88,7 @@ export const mockProjects: Project[] = [
   {
     id: "6",
     churchName: "Emirates Christian Fellowship",
+    churchId: "church4",
     title: "Community Education Center",
     summary: "Building a center to provide free language classes, job skills training, and community support services.",
     image: "https://images.unsplash.com/photo-1577896851231-70ef18881754",
@@ -95,6 +102,7 @@ export const mockProjects: Project[] = [
   {
     id: "7",
     churchName: "Casablanca Community Church",
+    churchId: "church6",
     title: "Relief for Earthquake Victims",
     summary: "Providing emergency supplies, temporary housing, and rebuilding assistance to families affected by the recent earthquake.",
     image: "https://images.unsplash.com/photo-1580983228693-a7c0616a9831",
@@ -108,6 +116,7 @@ export const mockProjects: Project[] = [
   {
     id: "8",
     churchName: "Tunis International Church",
+    churchId: "church7",
     title: "Worship Equipment Upgrade",
     summary: "Help us upgrade our outdated sound and media equipment to enhance worship services for our diverse congregation.",
     image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3",
@@ -121,6 +130,7 @@ export const mockProjects: Project[] = [
   {
     id: "9",
     churchName: "Nazareth Evangelical Church",
+    churchId: "church8",
     title: "Children's Ministry Playground",
     summary: "Creating a safe, fun outdoor space for children to play and learn about God's creation.",
     image: "https://images.unsplash.com/photo-1571247633106-edf5bf3d3100",
@@ -134,6 +144,7 @@ export const mockProjects: Project[] = [
   {
     id: "10",
     churchName: "Middle East Bible College",
+    churchId: "church1",
     title: "Scholarship Fund for Students",
     summary: "Helping passionate young leaders receive theological education to better serve their communities.",
     image: "https://images.unsplash.com/photo-1533669955142-6a73332af4db",
@@ -147,6 +158,7 @@ export const mockProjects: Project[] = [
   {
     id: "11",
     churchName: "Good Shepherd Church",
+    churchId: "church9",
     title: "Medical Clinic in Northern Iraq",
     summary: "We successfully built a clinic that now serves over 3,000 people with quality healthcare in an underserved region.",
     image: "https://images.unsplash.com/photo-1476234251651-f353703a034d",
@@ -160,6 +172,7 @@ export const mockProjects: Project[] = [
   {
     id: "12",
     churchName: "Jericho Bible Church",
+    churchId: "church8",
     title: "Community Agricultural Project",
     summary: "Our community helped fund agricultural training and equipment that now helps over 50 families with sustainable food production.",
     image: "https://images.unsplash.com/photo-1504439904031-93ded9f93e4e",
@@ -182,4 +195,9 @@ export const getActiveProjects = () => {
 
 export const getCompletedProjects = () => {
   return mockProjects.filter(project => project.isCompleted);
+};
+
+// New function to get projects by church
+export const getActiveProjectsByChurch = (churchId: string) => {
+  return mockProjects.filter(project => project.churchId === churchId && !project.isCompleted);
 };

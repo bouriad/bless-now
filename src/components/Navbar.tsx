@@ -24,6 +24,9 @@ const Navbar: React.FC = () => {
           <Link to="/" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Home
           </Link>
+          <Link to="/churches" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
+            Churches
+          </Link>
           <Link to="/projects" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Church Projects
           </Link>
@@ -36,8 +39,8 @@ const Navbar: React.FC = () => {
           <Link to="/about" className="font-medium text-white hover:text-sky/80 transition-colors font-public">
             Our Mission
           </Link>
-          <Button className="bg-gold hover:bg-gold/90 text-white ml-4 font-public" size="sm">
-            Start a Church Project
+          <Button className="bg-gold hover:bg-gold/90 text-white ml-4 font-public" size="sm" asChild>
+            <Link to="/about">Start a Church Project</Link>
           </Button>
         </nav>
 
@@ -86,6 +89,13 @@ const Navbar: React.FC = () => {
               Home
             </Link>
             <Link 
+              to="/churches" 
+              className="block font-public text-white hover:text-sky/80 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Churches
+            </Link>
+            <Link 
               to="/projects" 
               className="block font-public text-white hover:text-sky/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
@@ -113,8 +123,8 @@ const Navbar: React.FC = () => {
             >
               Our Mission
             </Link>
-            <Button className="bg-gold hover:bg-gold/90 text-white w-full font-public" size="sm">
-              Start a Church Project
+            <Button className="bg-gold hover:bg-gold/90 text-white w-full font-public" size="sm" asChild>
+              <Link to="/about" onClick={() => setIsMenuOpen(false)}>Start a Church Project</Link>
             </Button>
           </div>
         </div>

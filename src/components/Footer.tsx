@@ -40,6 +40,7 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-playfair font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 font-public">
               <li><Link to="/" className="hover:text-sky transition-colors">Home</Link></li>
+              <li><Link to="/churches" className="hover:text-sky transition-colors">MENA Churches</Link></li>
               <li><Link to="/projects" className="hover:text-sky transition-colors">Church Projects</Link></li>
               <li><Link to="/completed" className="hover:text-sky transition-colors">Completed Projects</Link></li>
               <li><Link to="/map" className="hover:text-sky transition-colors">MENA Church Map</Link></li>

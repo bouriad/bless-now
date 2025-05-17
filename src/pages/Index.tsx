@@ -133,7 +133,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="bg-gold hover:bg-gold/90 px-8 py-2 h-auto text-base" asChild>
-                  <Link to="/projects">Find a MENA Church to Support</Link>
+                  <Link to="/churches">Browse MENA Churches</Link>
                 </Button>
                 <Button variant="outline" className="border-sky text-sky hover:bg-sky/10 px-8 py-2 h-auto text-base" asChild>
                   <Link to="/about">Register Your Church</Link>
