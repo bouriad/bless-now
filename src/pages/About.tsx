@@ -213,7 +213,7 @@ const AboutUs = () => {
                   <Link to="/churches/register">Become a Partner Church</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-white hover:bg-sky-700 px-8 py-2 h-auto text-base">
-                  <Link to="/projects" className="text-blue-300">Support a Mission</Link>
+                  <Link to="/projects" className="text-sky">Support a Mission</Link>
                 </Button>
               </div>
             </div>
