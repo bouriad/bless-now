@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Filter } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 
 const categories = [
   { id: 'all', name: 'All Categories' },
@@ -32,13 +33,15 @@ const sortOptions = [
 
 interface ProjectFiltersProps {
   onFilterChange?: (filters: any) => void;
+  onSearchChange?: (searchTerm: string) => void;
 }
 
-const ProjectFilters: React.FC<ProjectFiltersProps> = ({ onFilterChange }) => {
+const ProjectFilters: React.FC<ProjectFiltersProps> = ({ onFilterChange, onSearchChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedUrgency, setSelectedUrgency] = useState('all');
   const [selectedSort, setSelectedSort] = useState('newest');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleFilterChange = () => {
     if (onFilterChange) {
@@ -47,6 +50,16 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({ onFilterChange }) => {
         urgency: selectedUrgency,
         sort: selectedSort
       });
+    }
+    
+    if (onSearchChange) {
+      onSearchChange(searchTerm);
+    }
+  };
+
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && onSearchChange) {
+      onSearchChange(searchTerm);
     }
   };
 
@@ -118,10 +131,13 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({ onFilterChange }) => {
 
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
           <div className="w-full md:w-2/3">
-            <input
+            <Input
               type="text"
               placeholder="Search by church name or location..."
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500"
+              className="w-full"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleSearch}
             />
           </div>
           <Button 
